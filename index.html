@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f2f1e9" />
+    <meta
+      name="description"
+      content="本地3D资产的布置与几何间距排练。导入受支持的glTF/GLB，解释包围代理间距，对比方案并导出可审阅报告。"
+    />
+    <title>留白实验室 · Scene Clearance Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/three.module.js" } }
+    </script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">跳到布置工作台</a>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="./"
+          ><span class="brand-symbol" aria-hidden="true">⌗</span
+          ><span
+            >留白<span class="brand-light">实验室</span
+            ><small>SCENE CLEARANCE LAB</small></span
+          ></a
+        >
+        <div class="top-actions">
+          <span class="local-pill"><i></i> 本地几何工作台</span
+          ><button class="button quiet" id="load-project">打开方案</button
+          ><input
+            id="project-file"
+            type="file"
+            accept=".json,application/json"
+            hidden
+          /><button class="button primary" id="export-project">
+            保存方案 ↗
+          </button>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div>
+            <p class="eyebrow">FROM GENERATED OBJECT TO A CONSIDERED SPACE</p>
+            <h1>留一点空间，<br />再把<em>想象</em>放进去。</h1>
+            <p>
+              把生成的物件带回真实尺度。先摆一摆、量一量，<br
+                class="desktop-br"
+              />再决定下一版空间。模型与方案留在你的浏览器里。
+            </p>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">↔</span>
+            <p>观察 · 布置 · 解释 · 对比</p>
+            <span
+              >无需账号即可排练内置原创场景<br />Aholo Lux3D
+              导出对接待账号验证</span
+            >
+          </div>
+        </section>
+        <div class="scope-note">
+          <span class="scope-icon" aria-hidden="true">i</span>
+          <p>
+            使用定向包围矩形做保守的平面间距排练。<strong
+              >不是安全、承重、消防或无障碍法规合格判断。</strong
+            >
+            贴图不参与几何检查，阈值由你设定。
+          </p>
+          <button id="method-button" type="button">查看方法 ↗</button>
+        </div>
+        <section class="workspace" id="workspace" aria-label="三维布置工作台">
+          <aside class="panel library-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">01 / COLLECT</span>
+                <h2>素材与物件</h2>
+              </div>
+              <span class="tiny-label" id="asset-count"></span>
+            </div>
+            <section class="import-box">
+              <span class="import-symbol" aria-hidden="true">↥</span
+              ><strong>把一个本地模型放进来</strong>
+              <p>
+                glTF 2.0 / GLB · 最高 12 MiB<br />静态未压缩三角网格，内嵌缓冲
+              </p>
+              <div class="import-settings">
+                <label
+                  >模型坐标单位<select id="import-unit">
+                    <option value="1">米 m（glTF 默认）</option>
+                    <option value="0.01">厘米 cm</option>
+                    <option value="0.001">毫米 mm</option>
+                  </select></label
+                ><label
+                  >来源备注<select id="import-source">
+                    <option value="local">普通本地资产</option>
+                    <option value="aholo">Aholo Lux3D 导出（自述）</option>
+                  </select></label
+                >
+              </div>
+              <button class="button primary" id="import-button">
+                选择 glTF / GLB ↗</button
+              ><input
+                id="model-file"
+                type="file"
+                accept=".gltf,.glb"
+                hidden
+              /><a
+                class="sample-link"
+                href="fixtures/original-sample.gltf"
+                download
+                >下载原创测试资产 ↓</a
+              ><button class="text-button" id="subset-button">
+                支持范围与限制
+              </button>
+            </section>
+            <div class="library-label">
+              <span>可用素材</span><small>点击加入场景</small>
+            </div>
+            <div id="asset-library" class="asset-library"></div>
+            <div class="objects-heading">
+              <h3>当前场景</h3>
+              <span id="object-count"></span>
+            </div>
+            <div id="object-list" class="object-list"></div>
+            <p class="persistence-note">
+              方案自动保存在本机。导入网格只保留在当前标签页；刷新后显示明确标记的包围代理，重新导入原文件即可恢复网格。
+            </p>
+          </aside>
+          <div class="scene-column">
+            <section class="panel viewport-panel">
+              <div class="viewport-heading">
+                <div>
+                  <span class="eyebrow">02 / ARRANGE</span
+                  ><label for="plan-name" class="visually-hidden"
+                    >方案名称</label
+                  ><input
+                    id="plan-name"
+                    maxlength="100"
+                    class="plan-name"
+                    value="微型展厅 · 初稿"
+                  />
+                </div>
+                <div class="undo-controls">
+                  <button id="undo" aria-label="撤回上一步" title="撤回">
+                    ↶</button
+                  ><button id="redo" aria-label="重做下一步" title="重做">
+                    ↷
+                  </button>
+                </div>
+              </div>
+              <div class="viewport-toolbar">
+                <div class="segmented" aria-label="操作模式">
+                  <button data-mode="orbit" aria-pressed="true">◉ 观察</button
+                  ><button data-mode="move" aria-pressed="false">
+                    ↔ 移动
+                  </button>
+                </div>
+                <div class="view-buttons">
+                  <button id="iso-view">透视</button
+                  ><button id="top-view">俯视</button
+                  ><button id="toggle-bounds" aria-pressed="true">
+                    包围代理
+                  </button>
+                </div>
+              </div>
+              <div id="viewport" class="viewport">
+                <div class="viewport-label">
+                  <span id="room-label"></span><span>单位 m / 地面布置</span>
+                </div>
+                <div class="viewport-orientation" aria-hidden="true">
+                  <span>N</span>↑<small>X → / Z ↓</small>
+                </div>
+              </div>
+              <div class="viewport-footer">
+                <div>
+                  <span><i class="dot green"></i> 已选物件</span
+                  ><span><i class="dot red"></i> 重叠 / 越界</span
+                  ><span><i class="dot amber"></i> 间隙 / 留白提醒</span>
+                </div>
+                <span id="interaction-hint"
+                  >拖动旋转 · 滚轮缩放 · 点击选中</span
+                >
+              </div>
+            </section>
+            <div
+              id="live-status"
+              class="live-status"
+              role="status"
+              aria-live="polite"
+            ></div>
+            <section class="panel checks-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">03 / UNDERSTAND</span>
+                  <h2>每一个提醒，都有理由。</h2>
+                </div>
+                <span class="check-badge" id="check-badge"></span>
+              </div>
+              <div id="summary" class="summary-grid"></div>
+              <div id="issues" class="issue-list"></div>
+              <div class="checks-footnote">
+                <span
+                  >代理可能比实际网格保守。接触算作零间隙；负值表示矩形重叠。</span
+                ><button id="export-report" class="text-button">
+                  下载可审阅报告 ↓
+                </button>
+              </div>
+            </section>
+          </div>
+          <aside class="inspector-column">
+            <section class="panel inspector-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">ITEM INSPECTOR</span>
+                  <h2>放到合适的位置</h2>
+                </div>
+                <span class="inspector-icon" aria-hidden="true">⌁</span>
+              </div>
+              <div id="inspector" class="inspector"></div>
+            </section>
+            <section class="panel rules-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">YOUR GEOMETRY RULES</span>
+                  <h2>自定检查条件</h2>
+                </div>
+              </div>
+              <div class="rules-body">
+                <div class="field-row">
+                  <label
+                    >房间宽度 / m<input
+                      id="room-width"
+                      type="number"
+                      min="2"
+                      max="30"
+                      step="0.5" /></label
+                  ><label
+                    >房间深度 / m<input
+                      id="room-depth"
+                      type="number"
+                      min="2"
+                      max="30"
+                      step="0.5"
+                  /></label>
+                </div>
+                <label class="field-label"
+                  >物件最小间隙 / m<input
+                    id="clearance"
+                    type="number"
+                    min="0"
+                    max="3"
+                    step="0.05" /></label
+                ><label class="checkbox-label"
+                  ><input id="zone-enabled" type="checkbox" />
+                  显示并检查中央留白带</label
+                ><label class="field-label"
+                  >自定留白带宽度 / m<input
+                    id="zone-width"
+                    type="number"
+                    min="0.1"
+                    max="30"
+                    step="0.1"
+                /></label>
+                <p>以上是你的设计参数，不是法规推荐值；也不证明人体可通行。</p>
+              </div>
+            </section>
+            <button class="reset-scene" id="reset-demo">
+              ↻ 回到原创示例场景
+            </button>
+          </aside>
+        </section>
+        <section class="panel compare-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">04 / COMPARE</span>
+              <h2>把两个想法，放在一起看。</h2>
+            </div>
+            <span class="tiny-label">快照只保存方案与几何代理</span>
+          </div>
+          <p class="panel-description">
+            先存下 A，调整布置后再存
+            B。同样的规则才能公平地比较提醒数量；这不是安全评分。
+          </p>
+          <div class="snapshot-grid">
+            <div class="snapshot" id="snapshot-a"></div>
+            <div class="snapshot" id="snapshot-b"></div>
+          </div>
+          <div id="comparison" class="comparison"></div>
+          <div class="comparison-actions">
+            <button class="button quiet" id="export-json">
+              导出完整 JSON 报告 ↓</button
+            ><span
+              >记录资产来源声明、文件
+              SHA-256、比例、变换、每对物件间距及方法限制。</span
+            >
+          </div>
+        </section>
+        <footer>
+          <span class="footer-brand">⌗ 留白实验室</span>
+          <p>先排练几何，再做空间决定。</p>
+          <span>BUILT WITH THREE.JS · LOCAL FIRST</span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="info-dialog" aria-labelledby="info-title">
+      <div class="dialog-heading">
+        <span class="eyebrow">READ BEFORE YOU IMPORT</span
+        ><button id="close-info" aria-label="关闭说明">×</button>
+      </div>
+      <h2 id="info-title"></h2>
+      <div id="info-content"></div>
+      <button id="info-done" class="button primary">了解，回到工作台 →</button>
+    </dialog>
+    <dialog id="reset-dialog" aria-labelledby="reset-title">
+      <h2 id="reset-title">重新打开原创示例？</h2>
+      <p>当前场景会被替换。已保存的 A/B 快照会保留，你也可以先导出方案。</p>
+      <div class="dialog-actions">
+        <button class="button quiet" id="reset-cancel">保留当前方案</button
+        ><button class="button primary" id="reset-confirm">打开示例 →</button>
+      </div>
+    </dialog>
+    <noscript
+      ><p class="noscript">
+        这个几何工作台需要启用
+        JavaScript。没有账号或远程模型服务也能使用内置场景。
+      </p></noscript
+    >
+  </body>
+</html>

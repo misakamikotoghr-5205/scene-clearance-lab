@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-11-04",
+  "sources": [
+    {
+      "repo": "mrdoob/three.js",
+      "version": "0.180.0",
+      "tag": "r180",
+      "commit": "0af9729d0c143a86a1d725d6e2c3ad83301f3f34",
+      "license": "MIT",
+      "reuse": "three.module.js, three.core.js, OrbitControls.js and LICENSE vendored unchanged from npm three@0.180.0; runtime rendering and orbit input use this code.",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+        },
+        {
+          "name": "OrbitControls.js",
+          "sha256": "b97879c748170baadeb3fb84cea1ffdf4674e283dc06042f34e2acb95a76042c"
+        },
+        {
+          "name": "three.module.js",
+          "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+        },
+        {
+          "name": "three.core.js",
+          "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+        }
+      ],
+      "readme": {
+        "url": "https://github.com/mrdoob/three.js/blob/0af9729d0c143a86a1d725d6e2c3ad83301f3f34/README.md",
+        "sha256": "5feedc7f86b36e55dfcb8bcb23b2b45c15eb627732dea0e5181dee5228723ab8"
+      },
+      "license_file": {
+        "url": "https://github.com/mrdoob/three.js/blob/0af9729d0c143a86a1d725d6e2c3ad83301f3f34/LICENSE"
+      }
+    },
+    {
+      "repo": "donmccurdy/three-gltf-viewer",
+      "commit": "e10c599170ae0552fd74660bce15fbbe93f7f11a",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "reuse": "Design comparison only; no source or assets copied",
+      "readme": {
+        "url": "https://github.com/donmccurdy/three-gltf-viewer/blob/e10c599170ae0552fd74660bce15fbbe93f7f11a/README.md",
+        "sha256": "6c91f21921d4b1adb5d83e1295d4d1e2ed91fe260739f12b28f274cf9b735c95"
+      },
+      "license_file": {
+        "url": "https://github.com/donmccurdy/three-gltf-viewer/blob/e10c599170ae0552fd74660bce15fbbe93f7f11a/LICENSE",
+        "sha256": "b951340896f853eeba83f72e442a2b254d0b581fda9ec80f0a70a53cd278893d"
+      }
+    },
+    {
+      "repo": "donmccurdy/glTF-Transform",
+      "commit": "8e2a94a2616d293c4b503d0fb6a4b42e6ec7c62f",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "reuse": "Design comparison only; no source or assets copied",
+      "readme": {
+        "url": "https://github.com/donmccurdy/glTF-Transform/blob/8e2a94a2616d293c4b503d0fb6a4b42e6ec7c62f/README.md",
+        "sha256": "d89d0c933e18062a4e664e6389774bc84e0bebc5011e5e801406c6895bc948a3"
+      },
+      "license_file": {
+        "url": "https://github.com/donmccurdy/glTF-Transform/blob/8e2a94a2616d293c4b503d0fb6a4b42e6ec7c62f/LICENSE.md",
+        "sha256": "2c4f111d00dbf22b10d31a14813c5f5de6a828640f7311f26b9dda89b3fce165"
+      }
+    }
+  ],
+  "npm_tarball_integrity": "sha512-o+qycAMZrh+TsE01GqWUxUIKR1AL0S8pq7zDkYOQw8GqfX8b8VoCKYUoHbhiX5j+7hr8XsuHDVU6+gkQJQKg9w=="
+}
