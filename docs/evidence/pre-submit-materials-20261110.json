@@ -1,0 +1,29 @@
+{
+  "project": "scene-clearance-lab",
+  "observed_at": "2026-11-10T08:25:45.592743+00:00",
+  "official_materials_complete": 4,
+  "official_materials_total": 4,
+  "draft_saved_observed": true,
+  "formally_submitted": false,
+  "final_terms_confirmation_pending": true,
+  "track": "空间设计应用奖",
+  "ecosystem_tools": "无",
+  "source_url": "https://github.com/misakamikotoghr-5205/scene-clearance-lab",
+  "code_and_evidence_commit": "693d27c2ad55ed6293bc16bca3d539a18ba5b703",
+  "report": {
+    "pages": 5,
+    "bytes": 825981,
+    "sha256": "6538f4a9c7d0cce951d92cd72680870a8ea63303a6c9c0427bbbf454dd66b00c",
+    "upload_completed_observed": true
+  },
+  "video": {
+    "seconds": 128,
+    "bytes": 1350990,
+    "sha256": "8faefda91fe49b0aba00d77fb8ab885cd93c31c12dd43ab4c484a517b84fa6e3",
+    "format": "H264 1920x1080 5fps, no audio",
+    "edited_real_screenshots_not_continuous_recording": true,
+    "upload_completed_observed": true
+  },
+  "raw_glb_public": false,
+  "official_submission_receipt": null
+}
