@@ -112,12 +112,13 @@ test("plan validation rejects non-finite positions, forged verified provenance a
   assert.equal(validatePlan(a), false);
   assert.throws(() => analyzePlan(a));
 });
-test("reviewable report includes all pairs, unchanged plan, snapshots and explicit account limitation", () => {
+test("reviewable report includes all pairs, unchanged plan, snapshots and provenance boundary", () => {
   const p = createPlan(),
     report = makeReport(p, comparePlans(p, p), { a: p, b: p });
   assert.equal(report.assetGeometryIncluded, false);
   assert.ok(report.analysis.pairs.length);
-  assert.match(report.declaredAholoIntegrationStatus, /pending/);
+  assert.match(report.declaredAholoIntegrationStatus, /does not authenticate/);
+  assert.ok(report.plan.assets.every((asset) => asset.source.verifiedAholo === false));
   assert.equal(validatePlan(report.comparisonPlans.a), true);
   report.plan.objects[0].x = 99;
   assert.notEqual(p.objects[0].x, 99);

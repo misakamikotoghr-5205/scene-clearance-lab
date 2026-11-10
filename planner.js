@@ -57,7 +57,7 @@ export const LIMITATIONS = [
   "本工具使用每件资产局部包围盒投影后的定向矩形，可能保守地标出实际空隙。不是精确网格碰撞检测。",
   "只排练水平地面布置；不分析承重、人体可通行性、人体工学、消防或无障碍合规。",
   "间距阈值和留白带由使用者自定，没有法规合格含义。",
-  "导入比例与来源声明需人工确认；Aholo Lux3D 实际生成及导出兼容性尚待账号验证。",
+  "导入比例与来源声明需人工确认；文件结构、指纹和尺寸检查不认证 Aholo 生成来源，也不保证所有导出选项兼容。",
 ];
 
 export function createPlan() {
@@ -331,7 +331,7 @@ export function makeReport(plan, comparison = null, snapshots = null) {
     title: plan.name,
     units: "m",
     declaredAholoIntegrationStatus:
-      "pending-account-and-export-verification; no generated-content evidence supplied by this app",
+      "user-declared origin only; this app does not authenticate external Aholo platform evidence",
     plan: structuredClone(plan),
     analysis: analyzePlan(plan),
     comparison: comparison ? structuredClone(comparison) : null,

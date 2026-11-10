@@ -184,21 +184,7 @@ function renderInspector() {
   const asset = plan.assets.find((a) => a.id === item.assetId),
     imported = asset.source.type !== "original-procedural",
     proxy = imported && !geometryMatches(asset, runtime.get(asset.id));
-  target.innerHTML = `<label class="field-label">物件名称<input id="item-name" type="text" maxlength="100" value="${esc(item.name)}"></label><div class="dimension-strip"><span><small>宽 W</small>${(asset.dimensions.width * item.scale).toFixed(2)}m</span><span><small>深 D</small>${(asset.dimensions.depth * item.scale).toFixed(2)}m</span><span><small>高 H</small>${(asset.dimensions.height * item.scale).toFixed(2)}m</span></div><div class="field-row"><label>位置 X / m<input id="item-x" type="number" step="0.1" min="-50" max="50" value="${item.x}"></label><label>位置 Z / m<input id="item-z" type="number" step="0.1" min="-50" max="50" value="${item.z}"></label></div><div class="field-row"><label>旋转 / °<input id="item-yaw" type="number" step="5" min="-3600" max="3600" value="${item.yaw}"></label><label>等比缩放<input id="item-scale" type="number" step="0.05" min="0.05" max="10" value="${item.scale}"></label></div><button id="apply-item">应用数值</button><div class="nudge-pad" aria-label="每次移动0.1米"><button data-nudge="0,-0.1" aria-label="向北移动0.1米">↑</button><button data-nudge="-0.1,0" aria-label="向西移动0.1米">←</button><span class="nudge-center">0.1 m</span><button data-nudge="0.1,0" aria-label="向东移动0.1米">→</button><button data-nudge="0,0.1" aria-label="向南移动0.1米">↓</button></div><div class="item-actions"><button id="rotate-item">旋转90°</button><button id="duplicate-item" ${plan.objects.length >= 40 ? "disabled" : ""}>复制</button><button id="delete-item">移除</button></div><div class="provenance"><strong>${asset.source.type === "aholo-export-user-declared" ? "Aholo Lux3D 导出 · 用户自述，未核验" : imported ? "本地导入 · 来源由使用者确认" : "本项目原创程序几何"}</strong>${proxy ? '<span class="proxy-label">当前显示包围代理。重新导入同一文件与单位可恢复网格；尺寸仍参与检查。</span>' : ""}<p>${esc(asset.source.name)}${asset.source.bytes ? `<br>${(asset.source.bytes / 1024).toFixed(1)} KiB · ${asset.source.vertexCount} 顶点 · ${asset.source.triangleCount} 三角形` : ""}</p>${asset.source.sha256 ? `<p>文件 SHA-256<br><code>${esc(asset.source.sha256)}</code></p>` : ""}${asset.warnings.map((warning) => `<p>ⓘ ${esc(warning)}</p>`).join("")}</div>`;
-  for (const [id, field] of [
-    ["item-name", "name"],
-    ["item-x", "x"],
-    ["item-z", "z"],
-    ["item-yaw", "yaw"],
-    ["item-scale", "scale"],
-  ])
-    $(`#${id}`).onchange = (event) =>
-      mutate((draft) => {
-        draft.objects.find((candidate) => candidate.id === selected)[field] =
-          field === "name"
-            ? event.target.value.trim() || "未命名物件"
-            : Number(event.target.value);
-      });
+  target.innerHTML = `<label class="field-label">物件名称<input id="item-name" type="text" maxlength="100" value="${esc(item.name)}"></label><div class="dimension-strip"><span><small>宽 W</small>${(asset.dimensions.width * item.scale).toFixed(2)}m</span><span><small>深 D</small>${(asset.dimensions.depth * item.scale).toFixed(2)}m</span><span><small>高 H</small>${(asset.dimensions.height * item.scale).toFixed(2)}m</span></div><div class="field-row"><label>位置 X / m<input id="item-x" type="number" step="0.1" min="-50" max="50" value="${item.x}"></label><label>位置 Z / m<input id="item-z" type="number" step="0.1" min="-50" max="50" value="${item.z}"></label></div><div class="field-row"><label>旋转 / °<input id="item-yaw" type="number" step="5" min="-3600" max="3600" value="${item.yaw}"></label><label>等比缩放<input id="item-scale" type="number" step="0.05" min="0.05" max="10" value="${item.scale}"></label></div><p class="persistence-note">编辑后点“应用数值”。</p><button id="apply-item">应用数值</button><div class="nudge-pad" aria-label="每次移动0.1米"><button data-nudge="0,-0.1" aria-label="向北移动0.1米">↑</button><button data-nudge="-0.1,0" aria-label="向西移动0.1米">←</button><span class="nudge-center">0.1 m</span><button data-nudge="0.1,0" aria-label="向东移动0.1米">→</button><button data-nudge="0,0.1" aria-label="向南移动0.1米">↓</button></div><div class="item-actions"><button id="rotate-item">旋转90°</button><button id="duplicate-item" ${plan.objects.length >= 40 ? "disabled" : ""}>复制</button><button id="delete-item">移除</button></div><div class="provenance"><strong>${asset.source.type === "aholo-export-user-declared" ? "Aholo Lux3D 导出 · 用户自述，未核验" : imported ? "本地导入 · 来源由使用者确认" : "本项目原创程序几何"}</strong>${proxy ? '<span class="proxy-label">当前显示包围代理。重新导入同一文件与单位可恢复网格；尺寸仍参与检查。</span>' : ""}<p>${esc(asset.source.name)}${asset.source.bytes ? `<br>${(asset.source.bytes / 1024).toFixed(1)} KiB · ${asset.source.vertexCount} 顶点 · ${asset.source.triangleCount} 三角形` : ""}</p>${asset.source.sha256 ? `<p>文件 SHA-256<br><code>${esc(asset.source.sha256)}</code></p>` : ""}${asset.warnings.map((warning) => `<p>ⓘ ${esc(warning)}</p>`).join("")}</div>`;
   $("#apply-item").onclick = () => {
     const values = {
       name: $("#item-name").value.trim() || "未命名物件",
@@ -394,7 +380,7 @@ function markdownReport(report) {
     "",
     ...report.limitations.map((line) => `- ${line}`),
     "",
-    "Aholo Lux3D 实际使用与导出兼容性待账号验证。程序示例及测试资产均为本项目原创，不是 Lux3D 生成证据。",
+    "资产来源由使用者声明；本工具校验文件哈希、结构与几何尺寸，不能认证 Aholo 生成记录，也不保证所有导出选项兼容。程序示例及测试资产均为本项目原创，不是 Lux3D 生成证据。",
     "",
     "## 物件与变换（米、度）",
     "",
@@ -536,7 +522,7 @@ function showInfo(kind) {
   $("#info-content").innerHTML =
     kind === "method"
       ? `<p>每件资产先计算局部包围盒，将其宽与深投影为一个定向矩形，再应用摆放旋转与缩放。重叠由分离轴测试判断，正向间隙由矩形边界最近距离计算。</p><ul>${LIMITATIONS.map((line) => `<li>${esc(line)}</li>`).join("")}</ul><p>默认内置几何与可下载测试文件是本项目原创。没有连接 Aholo API，也没有替你生成参赛使用证据。</p>`
-      : "<ul><li>支持 glTF 2.0 JSON（内嵌 base64 buffer）和 GLB 2.0（单个内嵌 BIN），最高12 MiB文件、20 MiB解码缓冲、200,000顶点、80图元、400节点。</li><li>只支持静态无压缩 TRIANGLES、FLOAT32 VEC3 POSITION、可选 unsigned 8/16/32位索引、节点TRS或仿射matrix及层级变换。按场景实际变换展开后居中落地。</li><li>仅显示 baseColorFactor；贴图和动画被明确忽略，不下载任何外部文件。场景文件里的远程URL不会被访问。</li><li>不支持外部.bin、Draco、Meshopt、量化坐标、蒙皮、形变目标、sparse访问器或其他必须扩展。请在原工具中导出未压缩静态网格。</li><li>glTF默认以米计量；厘米/毫米选项是对异常导出或已知单位的人工覆盖。几何间距不代表实际摆放的精确测量。</li><li>尚未用Aholo账号实际生成和导出模型，不能保证其所有导出选项都在此子集内。导入Aholo来源只是用户声明，未被本工具核验。</li></ul>";
+      : "<ul><li>支持 glTF 2.0 JSON（内嵌 base64 buffer）和 GLB 2.0（单个内嵌 BIN），最高12 MiB文件、20 MiB解码缓冲、200,000顶点、80图元、400节点。</li><li>只支持静态无压缩 TRIANGLES、FLOAT32 VEC3 POSITION、可选 unsigned 8/16/32位索引、节点TRS或仿射matrix及层级变换。按场景实际变换展开后居中落地。</li><li>仅显示 baseColorFactor；贴图和动画被明确忽略，不下载任何外部文件。场景文件里的远程URL不会被访问。</li><li>不支持外部.bin、Draco、Meshopt、量化坐标、蒙皮、形变目标、sparse访问器或其他必须扩展。请在原工具中导出未压缩静态网格。</li><li>glTF默认以米计量；厘米/毫米选项是对异常导出或已知单位的人工覆盖。几何间距不代表实际摆放的精确测量。</li><li>来源由使用者声明；本工具校验文件哈希、结构与几何尺寸，不能认证Aholo生成记录。不能保证所有导出选项都在此子集内。</li></ul>";
   $("#info-dialog").showModal();
 }
 

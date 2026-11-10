@@ -1,0 +1,923 @@
+{
+  "format": "scene-clearance-placement-report-v1",
+  "createdAt": "2026-11-10T08:16:02.076Z",
+  "title": "微型展厅 · 初稿",
+  "units": "m",
+  "declaredAholoIntegrationStatus": "user-declared origin only; this app does not authenticate external Aholo platform evidence",
+  "plan": {
+    "version": 1,
+    "name": "微型展厅 · 初稿",
+    "room": {
+      "width": 9,
+      "depth": 7
+    },
+    "clearance": 0.6,
+    "zone": {
+      "enabled": true,
+      "width": 1
+    },
+    "assets": [
+      {
+        "id": "bench",
+        "name": "弧角长凳",
+        "kind": "bench",
+        "color": "#c5966d",
+        "dimensions": {
+          "width": 1.8,
+          "depth": 0.6,
+          "height": 0.72
+        },
+        "source": {
+          "type": "original-procedural",
+          "name": "本项目原创程序几何",
+          "verifiedAholo": false
+        },
+        "warnings": []
+      },
+      {
+        "id": "seat",
+        "name": "软垫单椅",
+        "kind": "seat",
+        "color": "#8da89c",
+        "dimensions": {
+          "width": 0.72,
+          "depth": 0.72,
+          "height": 0.96
+        },
+        "source": {
+          "type": "original-procedural",
+          "name": "本项目原创程序几何",
+          "verifiedAholo": false
+        },
+        "warnings": []
+      },
+      {
+        "id": "kiosk",
+        "name": "斜面展台",
+        "kind": "kiosk",
+        "color": "#b9b4a6",
+        "dimensions": {
+          "width": 1.05,
+          "depth": 0.7,
+          "height": 1.35
+        },
+        "source": {
+          "type": "original-procedural",
+          "name": "本项目原创程序几何",
+          "verifiedAholo": false
+        },
+        "warnings": []
+      },
+      {
+        "id": "plinth",
+        "name": "圆角陈列台",
+        "kind": "plinth",
+        "color": "#e0cda9",
+        "dimensions": {
+          "width": 0.8,
+          "depth": 0.8,
+          "height": 0.85
+        },
+        "source": {
+          "type": "original-procedural",
+          "name": "本项目原创程序几何",
+          "verifiedAholo": false
+        },
+        "warnings": []
+      },
+      {
+        "id": "plant",
+        "name": "枝叶装置",
+        "kind": "plant",
+        "color": "#718e78",
+        "dimensions": {
+          "width": 0.72,
+          "depth": 0.72,
+          "height": 1.55
+        },
+        "source": {
+          "type": "original-procedural",
+          "name": "本项目原创程序几何",
+          "verifiedAholo": false
+        },
+        "warnings": []
+      },
+      {
+        "id": "import-293e30b9d435da6bee09-m",
+        "name": "AholoDesk",
+        "kind": "imported",
+        "color": "#829e94",
+        "dimensions": {
+          "width": 0.6000000238418579,
+          "height": 0.5544947385787964,
+          "depth": 0.38558849692344666
+        },
+        "source": {
+          "type": "aholo-export-user-declared",
+          "name": "AholoDesk.glb",
+          "bytes": 2198084,
+          "sha256": "293e30b9d435da6bee09e6cf77ebdbfbdf2de44053ab28fcc49224978401ab12",
+          "declaredUnitScale": 1,
+          "verifiedAholo": false,
+          "vertexCount": 45753,
+          "triangleCount": 91530
+        },
+        "warnings": []
+      }
+    ],
+    "objects": [
+      {
+        "id": "item-1",
+        "assetId": "bench",
+        "name": "入口长凳",
+        "x": -2.1,
+        "z": -1,
+        "yaw": 0,
+        "scale": 1
+      },
+      {
+        "id": "item-2",
+        "assetId": "seat",
+        "name": "试坐单椅",
+        "x": -1.05,
+        "z": -1,
+        "yaw": 0,
+        "scale": 1
+      },
+      {
+        "id": "item-3",
+        "assetId": "kiosk",
+        "name": "作品介绍台",
+        "x": 2.2,
+        "z": -0.3,
+        "yaw": -15,
+        "scale": 1
+      },
+      {
+        "id": "item-4",
+        "assetId": "plant",
+        "name": "枝叶装置",
+        "x": 0.05,
+        "z": 1.6,
+        "yaw": 0,
+        "scale": 1
+      },
+      {
+        "id": "item-5",
+        "assetId": "plinth",
+        "name": "陈列台",
+        "x": 2.1,
+        "z": -2.3,
+        "yaw": 0,
+        "scale": 1
+      },
+      {
+        "id": "item-mwaen18e-csylf",
+        "assetId": "import-293e30b9d435da6bee09-m",
+        "name": "AholoDesk",
+        "x": -2,
+        "z": 1.8,
+        "yaw": 0,
+        "scale": 1
+      }
+    ]
+  },
+  "analysis": {
+    "method": "conservative-2d-oriented-bounding-rectangles-v1",
+    "units": "m",
+    "pairs": [
+      {
+        "a": "item-1",
+        "b": "item-2",
+        "aName": "入口长凳",
+        "bName": "试坐单椅",
+        "gap": -0.21,
+        "threshold": 0.6,
+        "status": "overlap",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-1",
+        "b": "item-3",
+        "aName": "入口长凳",
+        "bName": "作品介绍台",
+        "gap": 2.809,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-1",
+        "b": "item-4",
+        "aName": "入口长凳",
+        "bName": "枝叶装置",
+        "gap": 2.134,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-1",
+        "b": "item-5",
+        "aName": "入口长凳",
+        "bName": "陈列台",
+        "gap": 2.961,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-1",
+        "b": "item-mwaen18e-csylf",
+        "aName": "入口长凳",
+        "bName": "AholoDesk",
+        "gap": 2.307,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-2",
+        "b": "item-3",
+        "aName": "试坐单椅",
+        "bName": "作品介绍台",
+        "gap": 2.296,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-2",
+        "b": "item-4",
+        "aName": "试坐单椅",
+        "bName": "枝叶装置",
+        "gap": 1.918,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-2",
+        "b": "item-5",
+        "aName": "试坐单椅",
+        "bName": "陈列台",
+        "gap": 2.45,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-2",
+        "b": "item-mwaen18e-csylf",
+        "aName": "试坐单椅",
+        "bName": "AholoDesk",
+        "gap": 2.266,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-3",
+        "b": "item-4",
+        "aName": "作品介绍台",
+        "bName": "枝叶装置",
+        "gap": 1.739,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-3",
+        "b": "item-5",
+        "aName": "作品介绍台",
+        "bName": "陈列台",
+        "gap": 1.132,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-3",
+        "b": "item-mwaen18e-csylf",
+        "aName": "作品介绍台",
+        "bName": "AholoDesk",
+        "gap": 3.767,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-4",
+        "b": "item-5",
+        "aName": "枝叶装置",
+        "bName": "陈列台",
+        "gap": 3.395,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-4",
+        "b": "item-mwaen18e-csylf",
+        "aName": "枝叶装置",
+        "bName": "AholoDesk",
+        "gap": 1.39,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      },
+      {
+        "a": "item-5",
+        "b": "item-mwaen18e-csylf",
+        "aName": "陈列台",
+        "bName": "AholoDesk",
+        "gap": 4.885,
+        "threshold": 0.6,
+        "status": "clear",
+        "method": "oriented-rectangle footprint proxy; horizontal shortest edge gap"
+      }
+    ],
+    "issues": [
+      {
+        "id": "pair-item-1-item-2",
+        "kind": "overlap",
+        "objects": [
+          "item-1",
+          "item-2"
+        ],
+        "title": "入口长凳 ↔ 试坐单椅",
+        "detail": "包围矩形重叠约 0.210 m（最小分离位移代理）。",
+        "gap": -0.21
+      },
+      {
+        "id": "zone-item-4",
+        "kind": "zone",
+        "objects": [
+          "item-4"
+        ],
+        "title": "枝叶装置 进入自定留白带",
+        "detail": "与中央 1.00 m 宽留白区域的包围矩形重叠；这不是通行或消防规范判断。"
+      }
+    ],
+    "footprints": [
+      {
+        "id": "item-1",
+        "polygon": [
+          [
+            -3,
+            -1.3
+          ],
+          [
+            -1.2,
+            -1.3
+          ],
+          [
+            -1.2,
+            -0.7
+          ],
+          [
+            -3,
+            -0.7
+          ]
+        ]
+      },
+      {
+        "id": "item-2",
+        "polygon": [
+          [
+            -1.41,
+            -1.36
+          ],
+          [
+            -0.69,
+            -1.36
+          ],
+          [
+            -0.69,
+            -0.64
+          ],
+          [
+            -1.41,
+            -0.64
+          ]
+        ]
+      },
+      {
+        "id": "item-3",
+        "polygon": [
+          [
+            1.602302,
+            -0.502194
+          ],
+          [
+            2.616524,
+            -0.773954
+          ],
+          [
+            2.797698,
+            -0.097806
+          ],
+          [
+            1.783476,
+            0.173954
+          ]
+        ]
+      },
+      {
+        "id": "item-4",
+        "polygon": [
+          [
+            -0.31,
+            1.24
+          ],
+          [
+            0.41,
+            1.24
+          ],
+          [
+            0.41,
+            1.96
+          ],
+          [
+            -0.31,
+            1.96
+          ]
+        ]
+      },
+      {
+        "id": "item-5",
+        "polygon": [
+          [
+            1.7,
+            -2.7
+          ],
+          [
+            2.5,
+            -2.7
+          ],
+          [
+            2.5,
+            -1.9
+          ],
+          [
+            1.7,
+            -1.9
+          ]
+        ]
+      },
+      {
+        "id": "item-mwaen18e-csylf",
+        "polygon": [
+          [
+            -2.3,
+            1.607206
+          ],
+          [
+            -1.7,
+            1.607206
+          ],
+          [
+            -1.7,
+            1.992794
+          ],
+          [
+            -2.3,
+            1.992794
+          ]
+        ]
+      }
+    ],
+    "summary": {
+      "objects": 6,
+      "overlaps": 1,
+      "narrowGaps": 0,
+      "outside": 0,
+      "reserved": 1,
+      "total": 2
+    },
+    "limitations": [
+      "本工具使用每件资产局部包围盒投影后的定向矩形，可能保守地标出实际空隙。不是精确网格碰撞检测。",
+      "只排练水平地面布置；不分析承重、人体可通行性、人体工学、消防或无障碍合规。",
+      "间距阈值和留白带由使用者自定，没有法规合格含义。",
+      "导入比例与来源声明需人工确认；文件结构、指纹和尺寸检查不认证 Aholo 生成来源，也不保证所有导出选项兼容。"
+    ]
+  },
+  "comparison": {
+    "a": {
+      "name": "微型展厅 · 初稿",
+      "summary": {
+        "objects": 6,
+        "overlaps": 1,
+        "narrowGaps": 1,
+        "outside": 0,
+        "reserved": 2,
+        "total": 4
+      },
+      "room": {
+        "width": 9,
+        "depth": 7
+      },
+      "clearance": 0.6,
+      "zone": {
+        "enabled": true,
+        "width": 1
+      }
+    },
+    "b": {
+      "name": "微型展厅 · 初稿",
+      "summary": {
+        "objects": 6,
+        "overlaps": 1,
+        "narrowGaps": 0,
+        "outside": 0,
+        "reserved": 1,
+        "total": 2
+      },
+      "room": {
+        "width": 9,
+        "depth": 7
+      },
+      "clearance": 0.6,
+      "zone": {
+        "enabled": true,
+        "width": 1
+      }
+    },
+    "comparableSettings": true,
+    "warning": "两方案使用同一房间、间距阈值与留白带，仅对比几何代理结果，不据此判断安全或设计优劣。",
+    "delta": {
+      "objects": 0,
+      "overlaps": 0,
+      "narrowGaps": -1,
+      "outside": 0,
+      "reserved": -1,
+      "total": -2
+    }
+  },
+  "comparisonPlans": {
+    "a": {
+      "version": 1,
+      "name": "微型展厅 · 初稿",
+      "room": {
+        "width": 9,
+        "depth": 7
+      },
+      "clearance": 0.6,
+      "zone": {
+        "enabled": true,
+        "width": 1
+      },
+      "assets": [
+        {
+          "id": "bench",
+          "name": "弧角长凳",
+          "kind": "bench",
+          "color": "#c5966d",
+          "dimensions": {
+            "width": 1.8,
+            "depth": 0.6,
+            "height": 0.72
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "seat",
+          "name": "软垫单椅",
+          "kind": "seat",
+          "color": "#8da89c",
+          "dimensions": {
+            "width": 0.72,
+            "depth": 0.72,
+            "height": 0.96
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "kiosk",
+          "name": "斜面展台",
+          "kind": "kiosk",
+          "color": "#b9b4a6",
+          "dimensions": {
+            "width": 1.05,
+            "depth": 0.7,
+            "height": 1.35
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "plinth",
+          "name": "圆角陈列台",
+          "kind": "plinth",
+          "color": "#e0cda9",
+          "dimensions": {
+            "width": 0.8,
+            "depth": 0.8,
+            "height": 0.85
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "plant",
+          "name": "枝叶装置",
+          "kind": "plant",
+          "color": "#718e78",
+          "dimensions": {
+            "width": 0.72,
+            "depth": 0.72,
+            "height": 1.55
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "import-293e30b9d435da6bee09-m",
+          "name": "AholoDesk",
+          "kind": "imported",
+          "color": "#829e94",
+          "dimensions": {
+            "width": 0.6000000238418579,
+            "height": 0.5544947385787964,
+            "depth": 0.38558849692344666
+          },
+          "source": {
+            "type": "aholo-export-user-declared",
+            "name": "AholoDesk.glb",
+            "bytes": 2198084,
+            "sha256": "293e30b9d435da6bee09e6cf77ebdbfbdf2de44053ab28fcc49224978401ab12",
+            "declaredUnitScale": 1,
+            "verifiedAholo": false,
+            "vertexCount": 45753,
+            "triangleCount": 91530
+          },
+          "warnings": []
+        }
+      ],
+      "objects": [
+        {
+          "id": "item-1",
+          "assetId": "bench",
+          "name": "入口长凳",
+          "x": -2.1,
+          "z": -1,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-2",
+          "assetId": "seat",
+          "name": "试坐单椅",
+          "x": -1.05,
+          "z": -1,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-3",
+          "assetId": "kiosk",
+          "name": "作品介绍台",
+          "x": 2.2,
+          "z": -0.3,
+          "yaw": -15,
+          "scale": 1
+        },
+        {
+          "id": "item-4",
+          "assetId": "plant",
+          "name": "枝叶装置",
+          "x": 0.05,
+          "z": 1.6,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-5",
+          "assetId": "plinth",
+          "name": "陈列台",
+          "x": 2.1,
+          "z": -2.3,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-mwaen18e-csylf",
+          "assetId": "import-293e30b9d435da6bee09-m",
+          "name": "AholoDesk",
+          "x": 0,
+          "z": 0,
+          "yaw": 0,
+          "scale": 1
+        }
+      ]
+    },
+    "b": {
+      "version": 1,
+      "name": "微型展厅 · 初稿",
+      "room": {
+        "width": 9,
+        "depth": 7
+      },
+      "clearance": 0.6,
+      "zone": {
+        "enabled": true,
+        "width": 1
+      },
+      "assets": [
+        {
+          "id": "bench",
+          "name": "弧角长凳",
+          "kind": "bench",
+          "color": "#c5966d",
+          "dimensions": {
+            "width": 1.8,
+            "depth": 0.6,
+            "height": 0.72
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "seat",
+          "name": "软垫单椅",
+          "kind": "seat",
+          "color": "#8da89c",
+          "dimensions": {
+            "width": 0.72,
+            "depth": 0.72,
+            "height": 0.96
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "kiosk",
+          "name": "斜面展台",
+          "kind": "kiosk",
+          "color": "#b9b4a6",
+          "dimensions": {
+            "width": 1.05,
+            "depth": 0.7,
+            "height": 1.35
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "plinth",
+          "name": "圆角陈列台",
+          "kind": "plinth",
+          "color": "#e0cda9",
+          "dimensions": {
+            "width": 0.8,
+            "depth": 0.8,
+            "height": 0.85
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "plant",
+          "name": "枝叶装置",
+          "kind": "plant",
+          "color": "#718e78",
+          "dimensions": {
+            "width": 0.72,
+            "depth": 0.72,
+            "height": 1.55
+          },
+          "source": {
+            "type": "original-procedural",
+            "name": "本项目原创程序几何",
+            "verifiedAholo": false
+          },
+          "warnings": []
+        },
+        {
+          "id": "import-293e30b9d435da6bee09-m",
+          "name": "AholoDesk",
+          "kind": "imported",
+          "color": "#829e94",
+          "dimensions": {
+            "width": 0.6000000238418579,
+            "height": 0.5544947385787964,
+            "depth": 0.38558849692344666
+          },
+          "source": {
+            "type": "aholo-export-user-declared",
+            "name": "AholoDesk.glb",
+            "bytes": 2198084,
+            "sha256": "293e30b9d435da6bee09e6cf77ebdbfbdf2de44053ab28fcc49224978401ab12",
+            "declaredUnitScale": 1,
+            "verifiedAholo": false,
+            "vertexCount": 45753,
+            "triangleCount": 91530
+          },
+          "warnings": []
+        }
+      ],
+      "objects": [
+        {
+          "id": "item-1",
+          "assetId": "bench",
+          "name": "入口长凳",
+          "x": -2.1,
+          "z": -1,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-2",
+          "assetId": "seat",
+          "name": "试坐单椅",
+          "x": -1.05,
+          "z": -1,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-3",
+          "assetId": "kiosk",
+          "name": "作品介绍台",
+          "x": 2.2,
+          "z": -0.3,
+          "yaw": -15,
+          "scale": 1
+        },
+        {
+          "id": "item-4",
+          "assetId": "plant",
+          "name": "枝叶装置",
+          "x": 0.05,
+          "z": 1.6,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-5",
+          "assetId": "plinth",
+          "name": "陈列台",
+          "x": 2.1,
+          "z": -2.3,
+          "yaw": 0,
+          "scale": 1
+        },
+        {
+          "id": "item-mwaen18e-csylf",
+          "assetId": "import-293e30b9d435da6bee09-m",
+          "name": "AholoDesk",
+          "x": -2,
+          "z": 1.8,
+          "yaw": 0,
+          "scale": 1
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "本工具使用每件资产局部包围盒投影后的定向矩形，可能保守地标出实际空隙。不是精确网格碰撞检测。",
+    "只排练水平地面布置；不分析承重、人体可通行性、人体工学、消防或无障碍合规。",
+    "间距阈值和留白带由使用者自定，没有法规合格含义。",
+    "导入比例与来源声明需人工确认；文件结构、指纹和尺寸检查不认证 Aholo 生成来源，也不保证所有导出选项兼容。"
+  ],
+  "assetGeometryIncluded": false,
+  "assetRehydration": "Imported model bytes stay in this browser tab. Project JSON preserves footprint dimensions and provenance only; re-import matching original files for mesh preview."
+}

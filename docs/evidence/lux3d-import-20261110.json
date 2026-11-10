@@ -1,0 +1,76 @@
+{
+  "schema": "scene-clearance.actual-asset-evidence/v1",
+  "recorded_on": "2026-11-10",
+  "scope": "One actual authenticated Lux3D image-to-3D generation, official UI download, offline importer probe and actual browser import. No final contest submission or general export compatibility claim.",
+  "registration": {
+    "personal_signup_verified": true,
+    "one_person_team_confirmed": true,
+    "topic_submitted": true,
+    "final_project_submitted": false
+  },
+  "generation": {
+    "route": "Authenticated official Lux3D browser workspace",
+    "reference_image": "AI-generated original display-table reference; not a 3D asset",
+    "requested_face_target": 100000,
+    "pbr_generation_enabled": false,
+    "task_completed_ui_verified": true,
+    "official_ui_download_completed": true,
+    "platform_webgl_preview_verified": false,
+    "platform_preview_observation": "The platform viewer remained black in this environment; no working platform 3D preview is claimed."
+  },
+  "asset": {
+    "sha256": "293e30b9d435da6bee09e6cf77ebdbfbdf2de44053ab28fcc49224978401ab12",
+    "bytes": 2198084,
+    "format": "GLB 2.0",
+    "vertices": 45753,
+    "triangles": 91530,
+    "primitives": 1,
+    "textures": 0,
+    "images": 0,
+    "required_extensions": [],
+    "unit_scale": 1,
+    "interpreted_dimensions_m": {
+      "width": 0.6000000238418579,
+      "height": 0.5544947385787964,
+      "depth": 0.38558849692344666
+    },
+    "units_caveat": "Geometry read using the glTF default metre scale. Real-world dimensions and the prompt's requested dimensions have not been physically verified."
+  },
+  "import": {
+    "existing_offline_importer_accepted": true,
+    "offline_probe_network_calls": 0,
+    "actual_browser_import_verified": true,
+    "browser_hash_and_geometry_counts_match_probe": true,
+    "actual_display_mode": "Interactive 2D top-view fallback with footprint proxies",
+    "full_webgl_mesh_rendering_verified": false,
+    "source_label": "User-declared Aholo export; the application does not authenticate platform provenance",
+    "historical_initial_layout_objects": 6,
+    "historical_initial_layout_warnings": 4
+  },
+  "rights_and_disclosure": {
+    "asset_ai_generated": true,
+    "demonstration_purpose": "Noncommercial AI-labeled contest demonstration",
+    "raw_asset_binary_published": false,
+    "commercial_or_redistribution_grant_verified": false,
+    "own_code_license": "MIT",
+    "generated_asset_inherits_code_mit": false
+  },
+  "ab_comparison": {
+    "final_browser_comparison_verified": true,
+    "current_browser_report_sha256": "85fec1fe322a1acc46b9e9dd866fad498d65a623d617f73d89e205ba278e12c2",
+    "current_browser_report_bytes": 22884,
+    "comparable_settings": true,
+    "room_m": {"width": 9, "depth": 7},
+    "clearance_m": 0.6,
+    "reserved_zone_width_m": 1,
+    "generated_object_a": {"x": 0, "z": 0, "yaw_degrees": 0, "scale": 1},
+    "generated_object_b": {"x": -2, "z": 1.8, "yaw_degrees": 0, "scale": 1},
+    "a": {"objects": 6, "overlaps": 1, "narrowGaps": 1, "outside": 0, "reserved": 2, "total": 4},
+    "b": {"objects": 6, "overlaps": 1, "narrowGaps": 0, "outside": 0, "reserved": 1, "total": 2},
+    "delta_total": -2,
+    "reload_hash_and_snapshots_retained": true,
+    "application_verifiedAholo_flags": false,
+    "interpretation": "Actual same-parameter footprint comparison, not a safety or design-quality score. One overlap and one reserved-zone warning remain."
+  },
+  "redaction": "No participant contacts, account identifiers, invitation IDs, task IDs, raw model bytes, unknown asset extras or private paths are included."
+}

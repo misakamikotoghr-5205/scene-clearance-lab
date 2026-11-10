@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "project": "scene-clearance-lab",
+  "prepared_at_utc": "2026-11-10T08:23:09.003658+00:00",
+  "video_filename": "scene-clearance-lab-aholo-demo.mp4",
+  "bytes": 1350990,
+  "sha256": "8faefda91fe49b0aba00d77fb8ab885cd93c31c12dd43ab4c484a517b84fa6e3",
+  "duration_seconds": 128.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": 5,
+  "video_codec": "H.264",
+  "pixel_format": "yuv420p",
+  "audio_streams": 0,
+  "public_video_url": null,
+  "official_submission": false,
+  "status_scope": "Local video prepared and validated; this producer did not upload or submit it. Later contest actions require separate evidence.",
+  "presentation": "Edited actual native-browser screenshot crops and separately labelled summaries of actual file/JSON results; not continuous recording, a live interaction recording or successful 3D rendering.",
+  "ai_disclosure": "All scenes carry an Aholo Lux3D AI-generated-content notice and Codex-assisted-code notice; generic video cards are original editorial layouts, not forged platform or terminal UI.",
+  "privacy": {
+    "browser_chrome_accounts_and_task_ids_cropped_out": true,
+    "raw_source_images_retained_privately": true,
+    "original_glb_included_or_publicly_redistributed": false
+  },
+  "source_asset": {
+    "bytes": 2198084,
+    "sha256": "293e30b9d435da6bee09e6cf77ebdbfbdf2de44053ab28fcc49224978401ab12",
+    "vertices": 45753,
+    "triangles": 91530,
+    "actual_generation_settings": {
+      "requested_face_preset": "100K",
+      "pbr_enabled": false
+    },
+    "unit_scale": 1,
+    "unit_interpretation": "glTF default metres; dimensions derived from file coordinates, not physical measurement",
+    "dimensions_width_height_depth_approx_m": [
+      0.6,
+      0.55,
+      0.39
+    ],
+    "license_scope": "Aholo-generated asset remains private under applicable platform terms; not relicensed under repository MIT."
+  },
+  "actual_comparison": {
+    "current_report_filename": "actual-ab-report-current-20261110.json",
+    "current_report_sha256": "85fec1fe322a1acc46b9e9dd866fad498d65a623d617f73d89e205ba278e12c2",
+    "numeric_data_matches_earlier_actual_export": true,
+    "same_parameters": true,
+    "room_m": [
+      9,
+      7
+    ],
+    "clearance_m": 0.6,
+    "reserved_strip_m": 1,
+    "object_count": 6,
+    "imported_object_A_x_z": [
+      0,
+      0
+    ],
+    "imported_object_B_x_z": [
+      -2,
+      1.8
+    ],
+    "A_total_findings": 4,
+    "B_total_findings": 2,
+    "B_remaining_overlaps": 1,
+    "B_remaining_reserved_conflicts": 1,
+    "safe_or_compliant_result_claimed": false
+  },
+  "verification": {
+    "ffprobe_passed": true,
+    "full_video_decode_exit_code": 0,
+    "full_decode_xerror_enabled": true,
+    "frame_count": 640,
+    "actual_mp4_keyframes_extracted": 10,
+    "actual_keyframes_visually_reviewed": 10,
+    "full_size_detail_checks": [
+      "applied B coordinates and privacy crop",
+      "A/B comparison table and readable limits"
+    ],
+    "continuous_footage_claimed": false,
+    "manual_audio_listening": "Not applicable: no audio track.",
+    "webgl_success_claimed": false,
+    "mobile_or_cross_browser_testing_claimed": false
+  },
+  "subtitles": {
+    "filename": "video-captions-20261110.srt",
+    "sha256": "8e1e9a1b87a65fc029856f7796a413addb84aacef3ba933451c785cab6ddb1b2",
+    "cue_count": 10,
+    "start_seconds": 0,
+    "end_seconds": 128,
+    "gaps_or_overlaps": false,
+    "burned_into_video": true
+  },
+  "source_screenshots": [
+    {
+      "file": "01-actual-glb-imported.png",
+      "sha256": "9132fe5e22c6847e708135c314ecbe1584a3d99ae39567c95fcea33e57543c92"
+    },
+    {
+      "file": "02-layout-a-saved.png",
+      "sha256": "5b11e1132ab6f50c0ba08fa1606215519b7cf7916a367751a1bf8b3ca41f4f13"
+    },
+    {
+      "file": "03-layout-b-applied.png",
+      "sha256": "1b944970e24d2689004f493bd5f8232d834faa44b68f87f0394a014f42aeed75"
+    },
+    {
+      "file": "04-actual-ab-comparison.png",
+      "sha256": "77b3592b979886762c8e018f93acc37a799f8f8c25ef1527446319b71852dd9a"
+    },
+    {
+      "file": "lux3d-task-completed-20261110.png",
+      "sha256": "2b8eb21af151ed63cfd21661e31017235e61fc118138402f3fa689e2e43bc8eb"
+    },
+    {
+      "file": "reference-image-result-20261110.png",
+      "sha256": "c615847a3f9bf8746229c7a34d9c9354e363178fc3c4e192740815abee7dc08e"
+    }
+  ],
+  "runtime_source_commit_at_capture": null,
+  "runtime_source_note": "The capture sequence includes the observed input UX correction. No single immutable capture commit is asserted by this video record."
+}
