@@ -1,6 +1,6 @@
 # Aholo report inputs and local reproduction
 
-The five-page Chinese report documents one actual Lux3D generation/download/import and one same-parameter A/B browser run. It has been uploaded to the event form; the final project entry has not been submitted. No raw GLB, uncropped account screenshot or credential is included.
+The five-page Chinese report documents one actual Lux3D generation/download/import and one same-parameter A/B browser run. It has been uploaded to the event form; the final project entry was submitted on November 10 at the official displayed time 09:02, with version 1 and eligibility/completeness review pending. See the separate [submission receipt](../evidence/submission-receipt-20261110.json). No raw GLB, uncropped account screenshot or credential is included.
 
 Inputs are `../aholo-report.md`, `../evidence/lux3d-import-20261110.json`, `../evidence/placement-report-20261110.json` and `images/*.png`. The actual layout report is 22,884 bytes, SHA-256 `85fec1fe322a1acc46b9e9dd866fad498d65a623d617f73d89e205ba278e12c2`. All source-verification flags remain false; model geometry is excluded.
 

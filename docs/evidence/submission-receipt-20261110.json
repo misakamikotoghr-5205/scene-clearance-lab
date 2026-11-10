@@ -1,0 +1,42 @@
+{
+  "project": "scene-clearance-lab",
+  "observed_at": "2026-11-10T09:02:46.800Z",
+  "official_materials_complete": 4,
+  "official_materials_total": 4,
+  "draft_saved_observed": true,
+  "formally_submitted": true,
+  "final_terms_confirmation_pending": false,
+  "track": "空间设计应用奖",
+  "ecosystem_tools": "无",
+  "source_url": "https://github.com/misakamikotoghr-5205/scene-clearance-lab",
+  "report": {
+    "pages": 5,
+    "bytes": 825981,
+    "sha256": "6538f4a9c7d0cce951d92cd72680870a8ea63303a6c9c0427bbbf454dd66b00c",
+    "upload_completed_observed": true
+  },
+  "video": {
+    "seconds": 128,
+    "bytes": 1350990,
+    "sha256": "8faefda91fe49b0aba00d77fb8ab885cd93c31c12dd43ab4c484a517b84fa6e3",
+    "format": "H264 1920x1080 5fps, no audio",
+    "edited_real_screenshots_not_continuous_recording": true,
+    "upload_completed_observed": true
+  },
+  "raw_glb_public": false,
+  "official_submission_receipt": {
+    "badge": "已提交",
+    "project_title": "留白实验室",
+    "version": 1,
+    "displayed_submission_time": "11月10日09:02",
+    "displayed_review_message": "作品已进入资格与完整性审核。请确保 Demo、视频和其他链接在结果公布前持续有效。",
+    "confirmation_email_claimed": false,
+    "receipt_number_observed": false,
+    "eligibility_or_award_confirmed": false
+  },
+  "final_terms_confirmed_by_user": true,
+  "submitted_source_commit": "eeebcfc8c182d84aecd939e4d7ff125265917ebb",
+  "event_url": "https://www.aholo3d.cn/hackathon",
+  "terms_url": "https://www.aholo3d.cn/hackathon/submission",
+  "evidence": "Main operator observed the official read-only submission card after accepting both required confirmations and clicking 提交作品 following current user approval. Card listed the uploaded video/PDF, selected track, ecosystem none and correct repository."
+}
